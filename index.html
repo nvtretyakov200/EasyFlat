@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyFlat | Long-Term Rentals</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="brand">
+          <span class="brand__logo">EF</span>
+          <div>
+            <p class="brand__name">EasyFlat</p>
+            <p class="brand__tagline">Long-term stays across the MENA region</p>
+          </div>
+        </div>
+        <nav class="site-nav">
+          <a href="#explore">Explore</a>
+          <a href="#how">How it works</a>
+          <a href="#host">Host a home</a>
+          <button class="nav-cta">Sign in</button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" id="explore">
+          <div class="hero__content">
+            <p class="hero__eyebrow">Long-term rentals from 30 nights</p>
+            <h1>Find a home in MENA that fits your life.</h1>
+            <p class="hero__subhead">
+              Transparent leases, verified hosts, and support in English, Arabic, and Russian for
+              relocations, project teams, and comfortable monthly living.
+            </p>
+            <div class="hero__actions">
+              <button class="primary">Start exploring</button>
+              <button class="secondary">Talk to a specialist</button>
+            </div>
+            <div class="hero__stats">
+              <div>
+                <h3>2,140+</h3>
+                <p>Verified homes</p>
+              </div>
+              <div>
+                <h3>42 cities</h3>
+                <p>Across MENA hubs</p>
+              </div>
+              <div>
+                <h3>4.9/5</h3>
+                <p>Average guest rating</p>
+              </div>
+            </div>
+          </div>
+          <div class="hero__card">
+            <form class="search" aria-label="Search for long-term rentals">
+              <h2>Search monthly stays</h2>
+              <label>
+                City or neighborhood
+                <input type="text" name="location" placeholder="Dubai, Riyadh, Cairo" />
+              </label>
+              <label>
+                Move-in date
+                <input type="date" name="moveIn" />
+              </label>
+              <label>
+                Length of stay (months)
+                <select name="length">
+                  <option value="1">1 month</option>
+                  <option value="2">2 months</option>
+                  <option value="3" selected>3 months</option>
+                  <option value="4">4 months</option>
+                  <option value="6">6+ months</option>
+                </select>
+              </label>
+              <label>
+                Budget per month
+                <input type="number" name="budget" placeholder="$2,500" />
+              </label>
+              <button class="primary" type="submit">Search stays</button>
+              <p class="helper">No application fees. Pay monthly.</p>
+            </form>
+          </div>
+        </section>
+
+        <section class="filters" aria-label="Filter rental results">
+          <div class="filters__group">
+            <div>
+              <h2>Explore flexible homes</h2>
+              <p>Filter by lifestyle, not just price.</p>
+            </div>
+            <div class="filters__chips" role="group" aria-label="Quick filters">
+              <button class="chip is-active" data-tag="All">All stays</button>
+              <button class="chip" data-tag="Pet friendly">Pet friendly</button>
+              <button class="chip" data-tag="Work ready">Work ready</button>
+              <button class="chip" data-tag="Family">Family</button>
+              <button class="chip" data-tag="Eco">Eco certified</button>
+            </div>
+          </div>
+          <div class="filters__controls">
+            <label>
+              City
+              <select name="city" id="cityFilter">
+                <option value="All">All cities</option>
+                <option value="Dubai">Dubai</option>
+                <option value="Riyadh">Riyadh</option>
+                <option value="Cairo">Cairo</option>
+                <option value="Doha">Doha</option>
+                <option value="Amman">Amman</option>
+              </select>
+            </label>
+            <label>
+              Bedrooms
+              <select name="bedrooms" id="bedFilter">
+                <option value="All">Any</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3+</option>
+              </select>
+            </label>
+            <label>
+              Max monthly price
+              <input type="range" id="priceFilter" min="1200" max="4200" value="3200" />
+              <span id="priceValue">$3,200</span>
+            </label>
+            <label>
+              Guests
+              <select name="guests" id="guestFilter">
+                <option value="All">Any</option>
+                <option value="2">Up to 2</option>
+                <option value="4">Up to 4</option>
+                <option value="6">6+</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <div class="listings" id="listings"></div>
+          <aside class="sidebar">
+            <div class="map">
+              <h3>Neighborhood insights</h3>
+              <p>
+                Browse by commute time, coworking hubs, and community ratings. Interactive map
+                available for signed-in guests.
+              </p>
+              <div class="map__mock">
+                <span>Interactive map preview</span>
+              </div>
+            </div>
+            <div class="support">
+              <h3>Dedicated stay support</h3>
+              <ul>
+                <li>Lease review within 2 hours</li>
+                <li>Guaranteed Wi-Fi 100 Mbps+</li>
+                <li>Local move-in concierge</li>
+                <li>Monthly housekeeping options</li>
+              </ul>
+              <button class="secondary">Meet the team</button>
+            </div>
+            <div class="chat" aria-live="polite">
+              <div class="chat__header">
+                <div>
+                  <h3>Rental support chat</h3>
+                  <p>Average response: 4 min</p>
+                </div>
+                <span class="chat__status">Online</span>
+              </div>
+              <div class="chat__messages">
+                <div class="chat__bubble chat__bubble--agent">
+                  Hi there! Need help booking a monthly stay in MENA?
+                </div>
+                <div class="chat__bubble chat__bubble--guest">
+                  Looking for a 2-bedroom in Dubai with fast Wi-Fi.
+                </div>
+                <div class="chat__bubble chat__bubble--agent">
+                  I can shortlist top stays in Downtown + Marina. Planning to move in next month?
+                </div>
+              </div>
+              <div class="chat__input">
+                <input type="text" placeholder="Ask about listings, visas, or utilities" />
+                <button class="primary" type="button">Send</button>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="how" id="how">
+          <div class="how__intro">
+            <h2>How EasyFlat works</h2>
+            <p>Book a long-term stay with the confidence of a boutique concierge.</p>
+          </div>
+          <div class="how__steps">
+            <article>
+              <h3>1. Match with vetted homes</h3>
+              <p>Every host is verified. Every listing includes a full 30+ night discount.</p>
+            </article>
+            <article>
+              <h3>2. Sign flexible leases</h3>
+              <p>Month-to-month terms with transparent pricing and utility inclusions.</p>
+            </article>
+            <article>
+              <h3>3. Settle in fast</h3>
+              <p>Fast Wi-Fi, ergonomic workspaces, and local support to feel settled.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="host" id="host">
+          <div>
+            <h2>Host with confidence</h2>
+            <p>
+              Earn consistent monthly income with dedicated renter screening and co-host support.
+            </p>
+          </div>
+          <button class="primary">List your home</button>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div>
+          <h3>EasyFlat</h3>
+          <p>Built for long-term stays with peace of mind.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+          </div>
+          <div>
+            <h4>Support</h4>
+            <a href="#">Help Center</a>
+            <a href="#">Safety</a>
+            <a href="#">Insurance</a>
+          </div>
+          <div>
+            <h4>Discover</h4>
+            <a href="#">City guides</a>
+            <a href="#">Partner perks</a>
+            <a href="#">Communities</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
